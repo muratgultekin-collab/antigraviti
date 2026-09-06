@@ -1,0 +1,18 @@
+{
+  "name": "pnomek-analiz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PNOMEK satış ve maliyet analizi (Mikro ERP / MS SQL) - keşif, satış, reçete maliyeti, karşılaştırma, rapor",
+  "scripts": {
+    "kesif": "node src/run.js kesif",
+    "satis": "node src/run.js satis",
+    "maliyet": "node src/run.js maliyet",
+    "karsilastir": "node src/run.js karsilastir",
+    "rapor": "node src/run.js rapor",
+    "hepsi": "node src/run.js hepsi"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "mssql": "^11.0.1"
+  }
+}

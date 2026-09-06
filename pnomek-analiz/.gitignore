@@ -1,0 +1,12 @@
+config.json
+node_modules/
+cikti/veri/*.json
+cikti/veri/tcmb_kur_cache.json
+cikti/kesif/ornekler.json
+cikti/*.xlsx
+test/ornek_maliyet_calismasi/
+cikti/sql_calisan/
+cikti/kesif/*
+!cikti/kesif/.gitkeep
+cikti/veri/*
+!cikti/veri/.gitkeep

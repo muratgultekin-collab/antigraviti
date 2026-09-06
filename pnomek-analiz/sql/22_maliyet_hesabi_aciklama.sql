@@ -1,0 +1,13 @@
+-- ADIM 3: Maliyet hesabı SQL'de değil, src/03_maliyet.js içinde yapılır (kur dönüşümü TCMB fallback gerektirdiği için).
+-- Mantık:
+--   1) 20_recete_09_acilim.sql  -> mamul başına bileşen ve kümüle miktar (yarı mamuller açılmış, yaprak bileşenler)
+--   2) 21_alis_hareketleri.sql  -> her bileşenin alış girişleri (tarih, miktar, net tutar, döviz, belge kuru)
+--   3) TL birim fiyat = net_tutar_TL / miktar ; net_tutar_TL:
+--        doviz_cinsi = 0 (TL)  -> net_tutar
+--        doviz_cinsi = USD/EUR -> net_tutar * kur(tarih)   [kur: Mikro DOVIZ_KURLARI, yoksa TCMB]
+--   4) Mamul maliyeti (TL):
+--        son alış        = Σ kümüle_miktar × bileşenin en son alış TL birim fiyatı
+--        yıllık ağırlıklı= Σ kümüle_miktar × (Σ net_tutar_TL_yıl / Σ miktar_yıl)  (her yıl için ayrı)
+--   5) EUR karşılığı: son alış -> son alış tarihindeki EUR kuru; yıllık -> alış bazlı ağırlıklı EUR (her alış kendi günü EUR kuruyla EUR'a çevrilip yıl içinde ağırlıklandırılır)
+--   6) Fiyatı bulunamayan bileşenler ve reçetesi olmayan mamuller ayrı listelenir.
+SELECT 'bkz. src/03_maliyet.js' AS aciklama;

@@ -1,0 +1,37 @@
+{
+  "_aciklama": "Bu dosyayı config.json olarak kopyalayın. Şifreyi git'e koymayın (config.json .gitignore'da).",
+  "sql": {
+    "server": "SUNUCU_ADI\\MIKRO",
+    "port": 1433,
+    "database": "",
+    "user": "sa",
+    "password": "",
+    "options": { "encrypt": false, "trustServerCertificate": true, "readOnlyIntent": true, "useUTC": false },
+    "requestTimeout": 600000
+  },
+  "donem": { "baslangic": "2020-01-01", "bitis": "2027-01-01", "kismiYil": { "2026": "2026 (Eylül'e kadar)" } },
+  "raporParaBirimi": "EUR",
+  "grupAlani": null,
+  "_grupAlani_secenekler": ["anagrup", "altgrup", "hiyerarsik"],
+  "satisFiltresi": null,
+  "_satisFiltresi_ornek": "h.sth_tip = 1 AND h.sth_evraktip IN (1,4)",
+  "alisFiltresi": null,
+  "_alisFiltresi_ornek": "h.sth_tip = 0 AND h.sth_evraktip IN (1,4)",
+  "dovizliTutarHareketDovizinde": true,
+  "_dovizliTutarHareketDovizinde": "true: sth_tutar hareket dövizindedir (TL = tutar x kur). false: sth_tutar zaten TL'dir. ADIM 1 çıktısındaki dövizli örneklerden doğrulayın.",
+  "kur": {
+    "dovizNo": { "TL": 0, "USD": null, "EUR": null },
+    "kurKolon": "dk_kur_1",
+    "tcmbKurTipi": "ForexBuying",
+    "evdsApiKey": "",
+    "kaynakSirasi": ["mikro", "tcmb"]
+  },
+  "recete": {
+    "tablo": null,
+    "mamulKolon": null,
+    "bilesenKolon": null,
+    "miktarKolon": null,
+    "mamulMiktarKolon": null
+  },
+  "maliyetCalismasiKlasoru": "C:\\Users\\PNOMEK\\OneDrive\\Desktop\\2_2026PNOMEK\\2026\\02_FINANS_VE_MUHASEBE\\03_Maliyet_Analizi\\2025 MALİYET ÇALIŞMASI"
+}
